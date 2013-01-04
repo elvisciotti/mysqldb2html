@@ -1,0 +1,13 @@
+#!/bin/bash
+# Script to output database content into HTML 
+# https://github.com/elvisciotti/mysqldb2html
+if [ -z $1 ]; then echo "Usage <script> dbname"; exit 1; fi
+
+echo "<h1>$1</h1>"
+date
+
+for tableName in `mysql -uroot $1 -e "show tables" | tail -n +2`; do 
+    tableNameReadable=`echo $tableName | tr '[a-z]' '[A-Z]' | tr _ " "`
+    echo "<h2>"$tableNameReadable"</h2>"; 
+    mysql -u root $1 -e "SELECT * FROM $tableName" --html
+done
