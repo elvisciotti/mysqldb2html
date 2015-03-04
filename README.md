@@ -21,6 +21,11 @@ Chmod +x `files/mysqldb2html` and pass the db name as a only parameter
 
     ```0 0 * * *  /usr/local/bin/mysqldb2html yourdbname | mail -s 'database report' -a 'Content-Type: text/html' your@mail.com```
 
-Install
--------
-Copy or symlink into `/usr/local/bin` or use this directory as a puppet module
+Install (binary only)
+---------------------
+    sudo wget -O /usr/local/bin/mysqldb2html  https://raw.githubusercontent.com/elvisciotti/mysqldb2html/master/files/mysqldb2html
+    chmod +x /usr/local/bin/mysqldb2html
+    
+Install (puppet)
+----------------
+Use this directory as a puppet module
