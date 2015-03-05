@@ -1,0 +1,10 @@
+Package: mysqldb2html
+Version: 1.0
+Section: base
+Priority: optional
+Architecture: all
+Depends:  
+Maintainer: phpntips
+Description: MySQL DB 2 HTML (https://github.com/elvisciotti/mysqldb2html)
+  mysqldb2html script (installed into /usr/local/bin)
+

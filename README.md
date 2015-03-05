@@ -9,7 +9,6 @@ It can be easily modified to work with single tables if you need to, with an add
 
 Usage and setup
 --------------
-Chmod +x `files/mysqldb2html` and pass the db name as a only parameter
 
  * mysqldb2html <dbname>
 
@@ -21,11 +20,15 @@ Chmod +x `files/mysqldb2html` and pass the db name as a only parameter
 
     ```0 0 * * *  /usr/local/bin/mysqldb2html yourdbname | mail -s 'database report' -a 'Content-Type: text/html' your@mail.com```
 
-Install (binary only)
----------------------
-    sudo wget -O /usr/local/bin/mysqldb2html  https://raw.githubusercontent.com/elvisciotti/mysqldb2html/master/files/mysqldb2html
-    chmod +x /usr/local/bin/mysqldb2html
-    
-Install (puppet)
-----------------
-Use this directory as a puppet module
+Rebuild DEB package
+-------------------
+
+	chmod +x mysqldb2html/usr/local/bin/mysqldb2html
+	dpkg --build mysqldb2html/
+
+Install DEB package
+-------------------
+	wget https://github.com/elvisciotti/mysqldb2html/raw/master/mysqldb2html.deb
+	sudo dpkg -i mysqldb2html.deb
+
+
